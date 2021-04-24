@@ -65,22 +65,4 @@ class count {
 }
 
 
-}
 
-public class sharedCounter {
-
-    public static void main(String[] args) {
-        Counter c = new Counter();
-
-        Thread inc = new IncThread(c);
-
-        inc.start();
-
-        try {
-            Thread.sleep(1000);
-        } catch (Exception e) {
-        }
-        System.out.println("The final value of counter after finished all thread: " + c.getVal() * 10);
-
-    }
-}
