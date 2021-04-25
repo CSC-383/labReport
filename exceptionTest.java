@@ -1,17 +1,17 @@
+// question no 13
 package labreport;
 
 class UserException extends Exception {
 
-    UserException(String msg) {
-        super(msg);
+    String str;
+
+    UserException(String str) {
+        this.str = str;
 
     }
-}
 
-class ExceptionTesting {
-
-    void display(int x) throws UserException {
-        System.out.println("value of x is= " + x);
+    void display() throws UserException {
+        System.out.println("stored string is : " + str);
         throw new UserException("Another Exception Occured");
     }
 }
@@ -19,15 +19,13 @@ class ExceptionTesting {
 class ExceptionTest {
 
     public static void main(String args[]) {
-        ExceptionTesting ob1 = new ExceptionTesting();
-
+        UserException ob = new UserException("hello");
         try {
-
-            ob1.display(50);
-
-        } catch (UserException e) {
+            ob.display();
+        } 
+        catch (UserException e) {
             System.out.println("Error found" + e.getMessage());
-
         }
     }
 }
+
